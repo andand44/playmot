@@ -1,0 +1,46 @@
+.form {
+    display: flex;
+    column-gap: 17px;
+
+    &-item {
+        position: relative;
+        flex: 1;
+
+        .icon {
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &-input {
+        border: 2px solid var(--dark);
+        padding: 5px 63px 5px 23px;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        font-family: 'Montserrat', sans-serif;
+        height: 50px;
+        width: 100%;
+        border-radius: 25px;
+
+        @media (max-width: 960px) {
+            font-size: 10px;
+            height: 33px;
+        }
+    }
+
+    &-button {
+        .btn {
+            height: 50px;
+            min-width: 160px;
+            @media (max-width: 960px) {
+                min-width: inherit;
+                height: 33px;
+                min-height: 33px;
+                font-size: 10px;
+            }
+        }        
+    }
+}

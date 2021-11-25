@@ -1,0 +1,45 @@
+.header {
+    flex: 0 0 auto;
+    padding-top: 42px;
+
+    &-container {
+        height: 70px;
+        display: flex;
+        align-items: center;
+    }
+
+    &-logo {
+        flex: 0 0 auto;
+        width: 69px;
+        margin-right: 33px;
+    }
+
+    &-button {
+        margin-left: auto;
+
+        .btn {
+            margin-left: 33px;
+        }
+    }
+
+    &-mobile {
+        &-nav {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 960px) {
+        padding-top: 30px;
+
+        &-button {
+            display: block;
+
+            .btn {
+                margin: 0;
+                width: 100%;
+            }
+        }
+    }
+}

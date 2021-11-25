@@ -1,0 +1,42 @@
+.hero {
+    &-prehead {
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    &-head {
+        margin-bottom: 37px;
+    }
+
+    &-text {
+        margin-bottom: 55px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+
+        .icon {
+            margin-right: 15px;
+            font-size: 30px;
+            color: var(--orange);
+        }
+
+        strong {
+            margin-left: 4px;
+        }
+    }
+
+    &-button {
+        display: inline-flex;
+        flex-direction: column;
+        &-text {
+            margin-top: 15px;
+            text-align: center;
+            letter-spacing: 0.335em;
+            text-transform: uppercase;
+        }
+    }
+}

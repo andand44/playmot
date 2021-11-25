@@ -1,0 +1,140 @@
+.nav {
+    display: flex;
+    font-weight: 600;
+    transition: all .3s;
+
+    &-link {
+        font-size: 18px;
+        margin-right: 27px;
+        position: relative;
+
+        &::after {
+            content: '';
+            width: 0;
+            height: 2px;
+            background-color: var(--dark);
+            transition: all .3s;
+            display: block;
+        }
+
+        &:hover,
+        &.active {
+            &:after {
+                width: 100%;
+            }
+        }
+
+        &.active {
+            color: var(--orange);
+        }
+    }
+
+    &-checkbox,
+    &-label {
+        display: none;
+    }
+
+    @media (max-width: 960px) {
+        display: block;
+
+        &-link {
+            margin: 0;
+            transition: all .3s;
+            display: block;
+        }
+
+        &-mobile {
+            position: absolute;
+            right: 0;
+            top: 100px;
+            min-width: 300px;
+            transition: all .3s;
+            opacity: 0;
+            visibility: hidden;
+            display: block;
+            background-color: #fff;
+            z-index: 2;
+        }
+
+        &-label {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            font-size: 15px;
+            min-height: 18px;
+        }
+
+        &-button {
+            margin-left: 4px;
+            width: 18px;
+            height: 2px;
+            position: relative;
+            background-color: var(--dark);
+            border-radius: 2px;
+            transition: all .3s;
+
+            &::before {
+                content: '';
+                width: 100%;
+                height: 2px;
+                background-color: var(--dark);
+                border-radius: 2px;
+                position: absolute;
+                left: 0;
+                top: -5px;
+                transition: all .3s;
+            }
+
+            &::after {
+                content: '';
+                width: 100%;
+                height: 2px;
+                background-color: var(--dark);
+                border-radius: 2px;
+                position: absolute;
+                left: 0;
+                bottom: -5px;
+                transition: all .3s;
+            }
+        }
+
+        &-checkbox {
+            &:checked {
+                ~.nav-label {
+                    .nav-button {
+                        background-color: transparent;
+
+                        &::before {
+                            transform: rotate(45deg);
+                            top: 0;
+                        }
+
+                        &::after {
+                            transform: rotate(-45deg);
+                            bottom: 0;
+                        }
+                    }
+                }
+
+                ~.nav-mobile {
+                    opacity: 1;
+                    visibility: visible;
+                    padding: 20px;
+
+                    .nav {
+                        margin-bottom: 30px;
+                    }
+
+                    .nav-link {
+                        margin-bottom: 15px;
+                    }
+
+                    .btn {
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
